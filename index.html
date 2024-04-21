@@ -1,47 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-     <script defer src='script.js'></script> <!--defer = load HTML first then load script last -->
-        <title>SCCApp</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+    <!--defer = load HTML first then load script last -->
+    <title>SCCApp</title>
+  </head>
+  <body>
     <header>
-        <h1>Stefan's Calorie Counter!</h1>
+      <h1>Stefan's Calorie Counter!</h1>
+      <h2>Total Calories: <span id="totalCalories">0</span></h2>
     </header>
-    <div class='container'>
-    <div id='breakfast'> <h3>Breakfast</h3></div>
-    <div id='lunch'><h3>Lunch</h3></div>
-    <div id='dinner'><h3>Dinner</h3></div>
-    <div id='snack'><h3>Snack</h3></div>
-    <div id='excercise'><h3>Excercise</h3></div>
-
-</div>
-<div>
-<!-- // Add form to fill out breakfast lunch dinner ect.  -->
-    <form id='calorieData'>  <!-- // Add EventListener on the form id not the Button but only when dealing with forms  -->
-        <label for='category'>Category:</label> 
-        <select name='category' id='category'> 
-            <option value='breakfast'>Breakfast</option> 
-            <option value='lunch'>Lunch</option>
-            <option value='dinner'>Dinner</option>
-            <option value='snack'>Snack</option>
-            <option value='excercise'>Excercise</option>
-
+    <div class="container">
+      <div id="breakfast"><h3>Breakfast</h3></div>
+      <div id="lunch"><h3>Lunch</h3></div>
+      <div id="dinner"><h3>Dinner</h3></div>
+      <div id="snack"><h3>Snack</h3></div>
+      <div id="excercise"><h3>Excercise</h3></div>
+    </div>
+    <div>
+      <!-- // Add form to fill out breakfast lunch dinner ect.  -->
+      <form id="calorieData">
+        <!-- // Add EventListener on the form id not the Button but only when dealing with forms  -->
+        <label for="category">Category:</label>
+        <select name="category" id="category">
+          <option value="breakfast">Breakfast</option>
+          <option value="lunch">Lunch</option>
+          <option value="dinner">Dinner</option>
+          <option value="snack">Snack</option>
+          <option value="excercise">Excercise</option>
         </select>
         <label for="description">Description:</label>
-        <input type="text" name='description' id='description'>
+        <input type="text" name="description" id="description" />
         <label for="calories">Calories:</label>
-        <input type="number" name='calories' id='calories'>
-        
+        <input type="number" name="calories" id="calories" />
+
         <button type="submit">submit</button>
-    
-
-
-    </form>
-
-</div>
-</body>
+      </form>
+    </div>
+  </body>
 </html>

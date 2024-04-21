@@ -6,40 +6,84 @@ const dinnerArea = document.querySelector("#dinner");
 const snackArea = document.querySelector("#snack");
 const excerciseArea = document.querySelector("#excercise");
 
+const totalCaloriesHTML = document.querySelector("#totalCalories");
+
 const calorieData = document.querySelector("#calorieData");
 
 let totalCalories = 0;
 
 calorieData.addEventListener("submit", (e) => {
   e.preventDefault();
-  const category = document.querySelector("#category");
-  const description = document.querySelector("#description");
-  const calories = document.querySelector("#calories");
-  console.log(category.value, description.value, calories.value);
+  const category = document.querySelector("#category").value;
+  const description = document.querySelector("#description").value;
+  const calories = parseInt(document.querySelector("#calories").value);
+  console.log(category, description, calories);
+
+  //   if (category === "breakfast") {
+  //     addBreakfast(description, calories);
+  //   }else if(category === "lunch") {
+  //     addLunch(description, calories)
+  //   }else if(category === "dinner") {
+  //     addDinner(description, calories)
+  //   }else if(category === "snack") {
+  //     addSnack(description, calories)
+  //   }else if(category === "excercise") {
+  //     addExcercise(description, calories)
+  //   }
 
   switch (category) {
     case "breakfast":
-      addBreakfast(category, description, calories);
+      addBreakfast(description, calories);
       break;
     case "lunch":
-      addLunch(category, description, calories);
+      addLunch(description, calories);
       break;
     case "dinner":
-      addDinner(category, description, calories);
+      addDinner(description, calories);
       break;
     case "snack":
-      addSnack(category, description, calories);
+      addSnack(description, calories);
     case "excercise":
-      addExcercise(category, description, calories);
+      addExcercise(description, calories);
   }
 });
 
-function addBreakfast(category, description, calories) {}
+function addBreakfast(description, calories) {
+  const h5 = document.createElement("h5");
+  h5.textContent = description + " " + calories;
+  breakfastArea.append(h5);
+  totalCalories += calories;
+  totalCaloriesHTML.textContent = totalCalories;
+}
 
-function addLunch(category, description, calories) {}
+function addLunch(description, calories) {
+  const h5 = document.createElement("h5");
+  h5.textContent = description + " " + calories;
+  lunchArea.append(h5);
+  totalCalories += calories;
+  totalCaloriesHTML.textContent = totalCalories;
+}
 
-function addDinner(category, description, calories) {}
+function addDinner(description, calories) {
+  const h5 = document.createElement("h5");
+  h5.textContent = description + " " + calories;
+  dinnerArea.append(h5);
+  totalCalories += calories;
+  totalCaloriesHTML.textContent = totalCalories;
+}
 
-function addSnack(category, description, calories) {}
+function addSnack(description, calories) {
+  const h5 = document.createElement("h5");
+  h5.textContent = description + " " + calories;
+  snackArea.append(h5);
+  totalCalories += calories;
+  totalCaloriesHTML.textContent = totalCalories;
+}
 
-function addExcercise(category, description, calories) {}
+function addExcercise(description, calories) {
+  const h5 = document.createElement("h5");
+  h5.textContent = description + " " + calories;
+  excerciseArea.append(h5);
+  totalCalories -= calories;
+  totalCaloriesHTML.textContent = totalCalories;
+}
